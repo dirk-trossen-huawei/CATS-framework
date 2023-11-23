@@ -5,7 +5,7 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 5 February 2024                                    China Mobile
+Expires: 26 May 2024                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
@@ -16,7 +16,7 @@ Expires: 5 February 2024                                    China Mobile
                                                                      ZTE
                                                                G. Mishra
                                                             Verizon Inc.
-                                                           4 August 2023
+                                                        23 November 2023
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 February 2024.
+   This Internet-Draft will expire on 26 May 2024.
 
 Copyright Notice
 
@@ -120,7 +120,7 @@ Table of Contents
    service contact instance running on different service sites.  A
    single service site may have limited computing resources available at
    a given time, whereas the various service sites may experience
-   different resource availability issues over time.  A single eservice
+   different resource availability issues over time.  A single service
    site may host one or multiple service contact instances.
 
    Steering in CATS is about selecting the appropriate service contact
@@ -417,7 +417,7 @@ Table of Contents
 3.3.6.  Overlay CATS-Forwarders
 
    The Egress CATS-Forwarders are the endpoints that behave as an
-   overlay egress for service requests that are forwatded over a CATS
+   overlay egress for service requests that are forwarded over a CATS
    infrastructure.  A service site that hosts service instances may be
    connected to one or more Egress CATS-Forwarders (that is, multi-
    homing is of course a design option).  If a C-PS has selected a
@@ -731,16 +731,16 @@ Table of Contents
               Shi, H., Li, Y., and S. Zhang, "Computing-Aware Traffic
               Steering (CATS) Problem Statement, Use Cases, and
               Requirements", Work in Progress, Internet-Draft, draft-
-              ietf-cats-usecases-requirements-00, 24 July 2023,
+              ietf-cats-usecases-requirements-01, 23 October 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-cats-
-              usecases-requirements-00>.
+              usecases-requirements-01>.
 
    [I-D.ietf-teas-rfc3272bis]
               Farrel, A., "Overview and Principles of Internet Traffic
               Engineering", Work in Progress, Internet-Draft, draft-
-              ietf-teas-rfc3272bis-26, 4 August 2023,
+              ietf-teas-rfc3272bis-27, 12 August 2023,
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
-              rfc3272bis-26>.
+              rfc3272bis-27>.
 
    [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
               STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
@@ -776,7 +776,8 @@ Appendix A.  Acknowledgements
    Farinacci, Adrian Farrel, Cullen Jennings, Linda Dunbar, Jeffrey
    Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li, Xinxin Yi, Jari
    Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian,
-   Zhenbin Li, and Xinyue Zhang for their comments and suggestions.
+   Zhenbin Li, Xinyue Zhang, and Nagendra Kumar for their comments and
+   suggestions.
 
 Contributors
 

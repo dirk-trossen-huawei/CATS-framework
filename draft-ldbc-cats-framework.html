@@ -15,26 +15,26 @@
 <meta content="
        This document describes a framework for Computing-Aware Traffic Steering (CATS). Particularly, the document identifies a set of CATS components, describes their interactions, and exemplifies the workflow of the control and data planes. 
     " name="description">
-<meta content="xml2rfc 3.17.5" name="generator">
+<meta content="xml2rfc 3.18.2" name="generator">
 <meta content="User Experience" name="keyword">
 <meta content="Collaborative Networking" name="keyword">
 <meta content="Service optimization" name="keyword">
 <meta content="draft-ldbc-cats-framework-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.17.5
-    Python 3.11.4
+  xml2rfc 3.18.2
+    Python 3.11.6
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.10.0
+    platformdirs 4.0.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.10
 -->
 <link href="draft-ldbc-cats-framework.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -657,7 +657,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -750,7 +750,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -874,16 +874,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -896,6 +893,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -997,28 +997,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1055,11 +1033,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CATS Framework</td>
-<td class="right">August 2023</td>
+<td class="right">November 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Li, et al.</td>
-<td class="center">Expires 5 February 2024</td>
+<td class="center">Expires 26 May 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1072,12 +1050,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ldbc-cats-framework-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-08-04" class="published">4 August 2023</time>
+<time datetime="2023-11-23" class="published">23 November 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-02-05">5 February 2024</time></dd>
+<dd class="expires"><time datetime="2024-05-26">26 May 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1137,7 +1115,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 5 February 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 26 May 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1265,7 +1243,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-1-1">Computing service architectures have been expanding from single service site to multiple, sometimes collaborative, service sites to address various issues (e.g., long response times or suboptimal service and network resource usage).<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">The underlying networking infrastructures that include computing resources usually provide relatively static service dispatching (that is, the selection of the sevice instances that will be invoked for a request). In such infrastructures, service-specific traffic is often directed to the closest service site from a routing perspective without considering the actual network state (e.g., traffic congestion conditions).<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">As described in <span>[<a href="#I-D.ietf-cats-usecases-requirements" class="cite xref">I-D.ietf-cats-usecases-requirements</a>]</span>, traffic steering that takes into account computing resource metrics would benefit several services, including latency-sensitive service like immersive services that rely upon the use of augmented reality or virtual reality (AR/VR) techniques. This document provides an architectural framework that aims at facilitating the making of compute- and network-aware traffic steering decisions in networking environments where computing service resources are deployed.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">The Computing-Aware Traffic Steering (CATS) framework assumes that there may be multiple service instances that are providing one given service. Each of these service instances can be accessed via a service contact instance running on different service sites. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. A single eservice site may host one or multiple service contact instances.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-4">The Computing-Aware Traffic Steering (CATS) framework assumes that there may be multiple service instances that are providing one given service. Each of these service instances can be accessed via a service contact instance running on different service sites. A single service site may have limited computing resources available at a given time, whereas the various service sites may experience different resource availability issues over time. A single service site may host one or multiple service contact instances.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <p id="section-1-5">Steering in CATS is about selecting the appropriate service contact instance that will service a request according to a set of network and computing metrics.
 That selection may not necessarily reveal the actual service instance that will be invoked, e.g., in hierarchical or recursive contexts.
 The metrics are aggerated; that is, they reflect the collective resources involved in a service instance.<a href="#section-1-5" class="pilcrow">¶</a></p>
@@ -1309,15 +1287,20 @@ The metrics are aggerated; that is, they reflect the collective resources involv
         <dd style="margin-left: 1.5em" id="section-2-2.12">
           <p id="section-2-2.12.1">Which and how these resources are solicited is part of the service logic which is internal to the provider. For example, these resources may be:<a href="#section-2-2.12.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-2.12.2.1">Exposed by one or multiple processes (a.k.a. Service Functions (SFs) <span>[<a href="#RFC7665" class="cite xref">RFC7665</a>]</span>).<a href="#section-2-2.12.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-2.12.2.1">
+              <p id="section-2-2.12.2.1.1">Exposed by one or multiple processes (a.k.a. Service Functions (SFs) <span>[<a href="#RFC7665" class="cite xref">RFC7665</a>]</span>).<a href="#section-2-2.12.2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2-2.12.2.2">Provided by virtual instances, physical, or a combination thereof.<a href="#section-2-2.12.2.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-2-2.12.2.2">
+              <p id="section-2-2.12.2.2.1">Provided by virtual instances, physical, or a combination thereof.<a href="#section-2-2.12.2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2-2.12.2.3">Hosted within the same or distinct nodes.<a href="#section-2-2.12.2.3" class="pilcrow">¶</a>
+            <li class="normal" id="section-2-2.12.2.3">
+              <p id="section-2-2.12.2.3.1">Hosted within the same or distinct nodes.<a href="#section-2-2.12.2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2-2.12.2.4">Hosted within the same or multiple service sites.<a href="#section-2-2.12.2.4" class="pilcrow">¶</a>
+            <li class="normal" id="section-2-2.12.2.4">
+              <p id="section-2-2.12.2.4.1">Hosted within the same or multiple service sites.<a href="#section-2-2.12.2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-2-2.12.2.5">Chained to provide a service using a variety of means.<a href="#section-2-2.12.2.5" class="pilcrow">¶</a>
+            <li class="normal" id="section-2-2.12.2.5">
+              <p id="section-2-2.12.2.5.1">Chained to provide a service using a variety of means.<a href="#section-2-2.12.2.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </dd>
@@ -1700,7 +1683,7 @@ The metrics are aggerated; that is, they reflect the collective resources involv
           <h4 id="name-overlay-cats-forwarders">
 <a href="#section-3.3.6" class="section-number selfRef">3.3.6. </a><a href="#name-overlay-cats-forwarders" class="section-name selfRef">Overlay CATS-Forwarders</a>
           </h4>
-<p id="section-3.3.6-1">The Egress CATS-Forwarders are the endpoints that behave as an overlay egress for service requests that are forwatded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (that is, multi-homing is of course a design option). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CIS-ID, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance. In some cases, the choice of the service  contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. Absent explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.3.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.3.6-1">The Egress CATS-Forwarders are the endpoints that behave as an overlay egress for service requests that are forwarded over a CATS infrastructure. A service site that hosts service instances may be connected to one or more Egress CATS-Forwarders (that is, multi-homing is of course a design option). If a C-PS has selected a specific service contact instance and the C-TC has marked the traffic with the CIS-ID, the Egress CATS-Forwarder then forwards traffic to the relevant service contact instance. In some cases, the choice of the service  contact instance may be left open to the Egress CATS-Forwarder (i.e., traffic is marked only with the CS-ID). In such cases, the Egress CATS-Forwarder selects a service contact instance using its knowledge of service and network capabilities as well as the current load as observed by the CATS-Forwarder, among other considerations. Absent explicit policy, an Egress CATS-Forwarder must make sure to forward all packets that pertain to a given service request towards the same service contact instance.<a href="#section-3.3.6-1" class="pilcrow">¶</a></p>
 <p id="section-3.3.6-2">Note that, depending on the design considerations and service requirements, per-service  contact instance computing-related metrics or aggregated per-site computing related metrics (and a combination thereof) can be used by a C-PS. Using aggregated per-site computing related metrics appears as a privileged option scalability-wise, but relies on Egress CATS-Forwarders that connect to various service  contact instances to select the proper service  contact instance.<a href="#section-3.3.6-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2002,6 +1985,7 @@ the C-PS to select a service contact instance hosted by a service site that can 
 <p id="section-7-1">This document makes no requests for IANA action.<a href="#section-7-1" class="pilcrow">¶</a></p>
 </section>
 </div>
+<div id="sec-informative-references">
 <section id="section-8">
       <h2 id="name-informative-references">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
@@ -2009,11 +1993,11 @@ the C-PS to select a service contact instance hosted by a service site that can 
 <dl class="references">
 <dt id="I-D.ietf-cats-usecases-requirements">[I-D.ietf-cats-usecases-requirements]</dt>
       <dd>
-<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Trossen, D.</span>, <span class="refAuthor">Boucadair, M.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Shi, H.</span>, <span class="refAuthor">Li, Y.</span>, and <span class="refAuthor">S. Zhang</span>, <span class="refTitle">"Computing-Aware Traffic Steering (CATS) Problem Statement, Use Cases, and Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-usecases-requirements-00</span>, <time datetime="2023-07-24" class="refDate">24 July 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-usecases-requirements-00">https://datatracker.ietf.org/doc/html/draft-ietf-cats-usecases-requirements-00</a>&gt;</span>. </dd>
+<span class="refAuthor">Yao, K.</span>, <span class="refAuthor">Trossen, D.</span>, <span class="refAuthor">Boucadair, M.</span>, <span class="refAuthor">Contreras, L. M.</span>, <span class="refAuthor">Shi, H.</span>, <span class="refAuthor">Li, Y.</span>, and <span class="refAuthor">S. Zhang</span>, <span class="refTitle">"Computing-Aware Traffic Steering (CATS) Problem Statement, Use Cases, and Requirements"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cats-usecases-requirements-01</span>, <time datetime="2023-10-23" class="refDate">23 October 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cats-usecases-requirements-01">https://datatracker.ietf.org/doc/html/draft-ietf-cats-usecases-requirements-01</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.ietf-teas-rfc3272bis">[I-D.ietf-teas-rfc3272bis]</dt>
       <dd>
-<span class="refAuthor">Farrel, A.</span>, <span class="refTitle">"Overview and Principles of Internet Traffic Engineering"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-rfc3272bis-26</span>, <time datetime="2023-08-04" class="refDate">4 August 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-rfc3272bis-26">https://datatracker.ietf.org/doc/html/draft-ietf-teas-rfc3272bis-26</a>&gt;</span>. </dd>
+<span class="refAuthor">Farrel, A.</span>, <span class="refTitle">"Overview and Principles of Internet Traffic Engineering"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-teas-rfc3272bis-27</span>, <time datetime="2023-08-12" class="refDate">12 August 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-teas-rfc3272bis-27">https://datatracker.ietf.org/doc/html/draft-ietf-teas-rfc3272bis-27</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC1034">[RFC1034]</dt>
       <dd>
@@ -2041,6 +2025,7 @@ the C-PS to select a service contact instance hosted by a service site that can 
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
 <div id="acknowledgements">
 <section id="appendix-A">
       <h2 id="name-acknowledgements">
@@ -2049,7 +2034,7 @@ the C-PS to select a service contact instance hosted by a service site that can 
 <p id="appendix-A-1">The authors would like to thank Joel Halpern, John Scudder, Dino Farinacci, Adrian Farrel,
 Cullen Jennings, Linda Dunbar, Jeffrey Zhang, Peng Liu, Fang Gao, Aijun Wang, Cong Li,
 Xinxin Yi, Jari Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian, Zhenbin Li,
-and Xinyue Zhang for their comments and suggestions.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+Xinyue Zhang, and Nagendra Kumar for their comments and suggestions.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="contributors">
