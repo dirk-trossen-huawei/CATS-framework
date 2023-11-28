@@ -5,7 +5,7 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 26 May 2024                                        China Mobile
+Expires: 31 May 2024                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
@@ -16,7 +16,7 @@ Expires: 26 May 2024                                        China Mobile
                                                                      ZTE
                                                                G. Mishra
                                                             Verizon Inc.
-                                                        23 November 2023
+                                                        28 November 2023
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 May 2024.
+   This Internet-Draft will expire on 31 May 2024.
 
 Copyright Notice
 
@@ -244,7 +244,7 @@ Table of Contents
    Egress CATS-Forwarder:  An entity that is located at the end of a
       CATS-computed path and which connects to a CATS-serviced site.
 
-   CATS Path Selector (C-PS):  A functional entit that computes and
+   CATS Path Selector (C-PS):  A functional entity that computes and
       selects paths towards service locations and instances and which
       accommodates the requirements of service requests.  Such a path
       computation engine takes into account the service and network
