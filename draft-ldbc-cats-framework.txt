@@ -80,7 +80,7 @@ Table of Contents
      4.1.  Provisioning of CATS Components
      4.2.  Service Announcement
      4.3.  Metrics Distribution
-     4.4.  Service Request Processing
+     4.4.  Service Access Processing
      4.5.  Service Contact Instance Affinity
    5.  Security Considerations
    6.  Privacy Considerations
@@ -605,7 +605,7 @@ Table of Contents
    A CIS-ID is not required if the service site can support consistently
    service contact instance selection.
 
-4.4.  Service Request Processing
+4.4.  Service Access Processing
 
    A C-PS computes paths that lead to Egress CATS-Forwarders according
    to the service and network metrics that have been advertised.  A C-PS
@@ -629,16 +629,18 @@ Table of Contents
    Forwarder 1") so that it can forward packets to their proper
    destination, as computed by the C-PS.
 
-   A service transaction consists of one or more service packets sent by
-   the client to an Ingress CATS-Forwarder to which the client is
+   Access to a service consists of one or more service-specific packets
+   (e.g., Session Initiation Protocol (SIP) [RFC3261], HTTP
+   {[?RFC9112}}, Real-Time Streaming Protocol (RTSP) [RFC7826]) sent by
+   the client via an Ingress CATS-Forwarder to which the client is
    connected to.  The Ingress CATS-Forwarder classifies incoming packets
    received from clients by soliciting the CATS classifier (C-TC).  When
    a matching classification entry is found for the packets, the Ingress
    CATS-Forwarder encapsulates and forwards them to the C-PS selected
-   Egress CATS-Forwarder.  When these packets reach the Egress CATS-
-   Forwarder, the outer header of the possible overlay encapsulation is
-   removed and inner packets are sent to the relevant service contact
-   instance.
+   Egress CATS-Forwarder.  Then, when these packets reach the Egress
+   CATS-Forwarder, the outer header of the possible overlay
+   encapsulation is removed and inner packets are sent to the relevant
+   service contact instance.
 
       Note that multi-homed clients may be connected to multiple CATS
       infrastructures that may be operated by the same or distinct
@@ -753,6 +755,12 @@ Table of Contents
               STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
               <https://www.rfc-editor.org/rfc/rfc1034>.
 
+   [RFC3261]  Rosenberg, J., Schulzrinne, H., Camarillo, G., Johnston,
+              A., Peterson, J., Sparks, R., Handley, M., and E.
+              Schooler, "SIP: Session Initiation Protocol", RFC 3261,
+              DOI 10.17487/RFC3261, June 2002,
+              <https://www.rfc-editor.org/rfc/rfc3261>.
+
    [RFC4655]  Farrel, A., Vasseur, J.-P., and J. Ash, "A Path
               Computation Element (PCE)-Based Architecture", RFC 4655,
               DOI 10.17487/RFC4655, August 2006,
@@ -776,6 +784,11 @@ Table of Contents
               Chaining (SFC) Architecture", RFC 7665,
               DOI 10.17487/RFC7665, October 2015,
               <https://www.rfc-editor.org/rfc/rfc7665>.
+
+   [RFC7826]  Schulzrinne, H., Rao, A., Lanphier, R., Westerlund, M.,
+              and M. Stiemerling, Ed., "Real-Time Streaming Protocol
+              Version 2.0", RFC 7826, DOI 10.17487/RFC7826, December
+              2016, <https://www.rfc-editor.org/rfc/rfc7826>.
 
 Appendix A.  Acknowledgements
 
