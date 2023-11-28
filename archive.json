@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-11-26T01:04:43.291276+00:00",
+  "timestamp": "2023-11-28T01:02:10.986371+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -690,6 +690,24 @@
           "updatedAt": "2023-11-24T10:34:09Z"
         }
       ]
+    },
+    {
+      "number": 50,
+      "id": "I_kwDOJBcdGs539qbt",
+      "title": "Comments from Zongpeng",
+      "url": "https://github.com/boucadair/CATS-framework/issues/50",
+      "state": "CLOSED",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "editorial"
+      ],
+      "body": "    BTW, I have read the draft, and have two small suggestions:\r\n\r\n\r\n1.\r\n     Computing-aware forwarding (or steeting, computing): A forwarding\r\n      (or steeting, computing) scheme which takes as input a set of\r\n      metrics that reflect the capabilities and state of computing\r\n      resources.\r\n    steet--->steering\r\n2.\r\n    CATS Service ID (CS-ID): An identifier representing a service, which\r\n      the clients use to access it.  Such an ID identifies all the\r\n      instances of a given service, regardless of their location.\r\n      The CS-ID is independent of which service contact instance serves\r\n      the service request.\r\n      service requests are spread over the service contact instances\r\n\r\n    service requests are  ---- > Service\r\n\r\n\r\n\r\n",
+      "createdAt": "2023-11-27T16:28:43Z",
+      "updatedAt": "2023-11-27T16:33:28Z",
+      "closedAt": "2023-11-27T16:33:28Z",
+      "comments": []
     }
   ],
   "pulls": [
@@ -1791,6 +1809,34 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 51,
+      "id": "PR_kwDOJBcdGs5gdZjD",
+      "title": "nits",
+      "url": "https://github.com/boucadair/CATS-framework/pull/51",
+      "state": "MERGED",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-11-27T16:32:47Z",
+      "updatedAt": "2023-11-27T16:33:28Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "bbbcde92ebf84b209a5f3e0572ea898c92a8c4e1",
+      "headRepository": "boucadair/CATS-framework",
+      "headRefName": "boucadair-patch-4",
+      "headRefOid": "306e486c48e8ad0c13272ec1915e5dedbf893a66",
+      "closedAt": "2023-11-27T16:33:27Z",
+      "mergedAt": "2023-11-27T16:33:27Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "e2f2ff887bf07f93db35c5505f5a3dbde1bbc6c6"
+      },
       "comments": [],
       "reviews": []
     }
