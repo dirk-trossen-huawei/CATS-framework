@@ -1481,7 +1481,7 @@ The metrics are aggerated; that is, they reflect the collective resources involv
         <h3 id="name-cats-components">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-cats-components" class="section-name selfRef">CATS Components</a>
         </h3>
-<p id="section-3.3-1">The network nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service instances and network. The main CATS functional elements and their interactions are shown in <a href="#fig-cats-fw" class="auto internal xref">Figure 1</a>.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-1">In CATS, the network nodes make forwarding decisions for a given service request that has been received from a client according to the capabilities and status information of both service instances and network. The main CATS functional elements and their interactions are shown in <a href="#fig-cats-fw" class="auto internal xref">Figure 1</a>.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 <span id="name-cats-functional-components"></span><div id="fig-cats-fw">
 <figure id="figure-1">
           <div id="section-3.3-2.1">
@@ -1647,7 +1647,7 @@ The metrics are aggerated; that is, they reflect the collective resources involv
 <a href="#section-3.3.1" class="section-number selfRef">3.3.1. </a><a href="#name-service-sites-and-services-" class="section-name selfRef">Service Sites and Services Instances</a>
           </h4>
 <p id="section-3.3.1-1">Service sites are the premises that host a set of computing resources. As mentioned in <a href="#cats-ids" class="auto internal xref">Section 3.2</a>, a compute service (e.g., for face recognition purposes or a game server) is uniquely identified by a CATS Service IDentifier (CS-ID).<a href="#section-3.3.1-1" class="pilcrow">¶</a></p>
-<p id="section-3.3.1-2">Service instances can be instantiated and accessed through different service sites so that a single service can be represented and accessed by several contact instances that run in different regions of a network.<a href="#section-3.3.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.3.1-2">Service instances can be instantiated and accessed through different service sites so that a single service can be represented and accessed via several contact instances that run in different regions of a network.<a href="#section-3.3.1-2" class="pilcrow">¶</a></p>
 <p id="section-3.3.1-3"><a href="#fig-cats-fw" class="auto internal xref">Figure 1</a> shows two CATS nodes ("CATS-Forwarder 1" and "CATS-Forwarder 3") that provide access to service contact instances. These nodes behave as Egress CATS-Forwarders (<a href="#sec-ocr" class="auto internal xref">Section 3.3.6</a>).<a href="#section-3.3.1-3" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
 <li class="normal ulEmpty" id="section-3.3.1-4.1">
@@ -1707,7 +1707,7 @@ The metrics are aggerated; that is, they reflect the collective resources involv
           <h4 id="name-underlay-infrastructure">
 <a href="#section-3.3.7" class="section-number selfRef">3.3.7. </a><a href="#name-underlay-infrastructure" class="section-name selfRef">Underlay Infrastructure</a>
           </h4>
-<p id="section-3.3.7-1">The "underlay infrastructure" in <a href="#fig-cats-fw" class="auto internal xref">Figure 1</a> indicates an IP/MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a P-CS will be distributed among the overlay CATS-Forwarders (<a href="#sec-ocr" class="auto internal xref">Section 3.3.6</a>), and will not affect the underlay nodes.<a href="#section-3.3.7-1" class="pilcrow">¶</a></p>
+<p id="section-3.3.7-1">The "underlay infrastructure" in <a href="#fig-cats-fw" class="auto internal xref">Figure 1</a> indicates an IP/MPLS network that is not necessarily CATS-aware. The CATS paths that are computed by a P-CS will be distributed among the CATS-Forwarders (<a href="#sec-ocr" class="auto internal xref">Section 3.3.6</a>), and will not affect the underlay nodes. Underlay nodes are typically P routers (<span><a href="https://rfc-editor.org/rfc/rfc4026#section-5.3.1" class="relref">Section 5.3.1</a> of [<a href="#RFC4026" class="cite xref">RFC4026</a>]</span>).<a href="#section-3.3.7-1" class="pilcrow">¶</a></p>
 <p id="section-3.3.7-2">A CATS implementation may rely upon a control or management plane to distribute service metrics and network metrics - this document does not define a specific solution.<a href="#section-3.3.7-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -2021,6 +2021,10 @@ the C-PS to select a service contact instance hosted by a service site that can 
 <dt id="RFC3261">[RFC3261]</dt>
       <dd>
 <span class="refAuthor">Rosenberg, J.</span>, <span class="refAuthor">Schulzrinne, H.</span>, <span class="refAuthor">Camarillo, G.</span>, <span class="refAuthor">Johnston, A.</span>, <span class="refAuthor">Peterson, J.</span>, <span class="refAuthor">Sparks, R.</span>, <span class="refAuthor">Handley, M.</span>, and <span class="refAuthor">E. Schooler</span>, <span class="refTitle">"SIP: Session Initiation Protocol"</span>, <span class="seriesInfo">RFC 3261</span>, <span class="seriesInfo">DOI 10.17487/RFC3261</span>, <time datetime="2002-06" class="refDate">June 2002</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3261">https://www.rfc-editor.org/rfc/rfc3261</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC4026">[RFC4026]</dt>
+      <dd>
+<span class="refAuthor">Andersson, L.</span> and <span class="refAuthor">T. Madsen</span>, <span class="refTitle">"Provider Provisioned Virtual Private Network (VPN) Terminology"</span>, <span class="seriesInfo">RFC 4026</span>, <span class="seriesInfo">DOI 10.17487/RFC4026</span>, <time datetime="2005-03" class="refDate">March 2005</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc4026">https://www.rfc-editor.org/rfc/rfc4026</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC4655">[RFC4655]</dt>
       <dd>

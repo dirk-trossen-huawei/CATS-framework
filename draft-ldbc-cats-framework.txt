@@ -306,8 +306,8 @@ Table of Contents
 
 3.3.  CATS Components
 
-   The network nodes make forwarding decisions for a given service
-   request that has been received from a client according to the
+   In CATS, the network nodes make forwarding decisions for a given
+   service request that has been received from a client according to the
    capabilities and status information of both service instances and
    network.  The main CATS functional elements and their interactions
    are shown in Figure 1.
@@ -357,7 +357,7 @@ Table of Contents
 
    Service instances can be instantiated and accessed through different
    service sites so that a single service can be represented and
-   accessed by several contact instances that run in different regions
+   accessed via several contact instances that run in different regions
    of a network.
 
    Figure 1 shows two CATS nodes ("CATS-Forwarder 1" and "CATS-Forwarder
@@ -452,8 +452,9 @@ Table of Contents
 
    The "underlay infrastructure" in Figure 1 indicates an IP/MPLS
    network that is not necessarily CATS-aware.  The CATS paths that are
-   computed by a P-CS will be distributed among the overlay CATS-
-   Forwarders (Section 3.3.6), and will not affect the underlay nodes.
+   computed by a P-CS will be distributed among the CATS-Forwarders
+   (Section 3.3.6), and will not affect the underlay nodes.  Underlay
+   nodes are typically P routers (Section 5.3.1 of [RFC4026]).
 
    A CATS implementation may rely upon a control or management plane to
    distribute service metrics and network metrics - this document does
@@ -760,6 +761,11 @@ Table of Contents
               Schooler, "SIP: Session Initiation Protocol", RFC 3261,
               DOI 10.17487/RFC3261, June 2002,
               <https://www.rfc-editor.org/rfc/rfc3261>.
+
+   [RFC4026]  Andersson, L. and T. Madsen, "Provider Provisioned Virtual
+              Private Network (VPN) Terminology", RFC 4026,
+              DOI 10.17487/RFC4026, March 2005,
+              <https://www.rfc-editor.org/rfc/rfc4026>.
 
    [RFC4655]  Farrel, A., Vasseur, J.-P., and J. Ash, "A Path
               Computation Element (PCE)-Based Architecture", RFC 4655,
