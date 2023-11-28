@@ -5,7 +5,7 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 30 May 2024                                        China Mobile
+Expires: 31 May 2024                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
@@ -16,7 +16,7 @@ Expires: 30 May 2024                                        China Mobile
                                                                      ZTE
                                                                G. Mishra
                                                             Verizon Inc.
-                                                        27 November 2023
+                                                        28 November 2023
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 May 2024.
+   This Internet-Draft will expire on 31 May 2024.
 
 Copyright Notice
 
@@ -225,15 +225,22 @@ Table of Contents
       metrics that reflect the capabilities and state of computing
       resources.
 
-   Service request:  The request for a specific service.  Such a request
-      is steered to a service contact instance.
+   Service request:  A request to access or invoke a specific service.
+      Such a request is steered to a service contact instance via CATS-
+      Forwarders.
 
-   CATS-Forwarder:  A network device that makes forwarding decisions
+      A service request is placed using service-specific protocols.
+
+      Service requests are not explicitly sent by clients to CATS-
+      Forwarders.
+
+   CATS-Forwarder:  A network entity that makes forwarding decisions
       based on CATS information to steer traffic specific to a service
       request towards a corresponding yet selected service contact
       instance.  The selection of a service contact instance relies upon
-      a multi-metric CATS-based path computation.  A CATS-Forwarder may
-      behave as Ingress or Egress CATS-Forwarder.
+      a multi-metric path computation.
+
+      A CATS-Forwarder may behave as Ingress or Egress CATS-Forwarder.
 
    Ingress CATS-Forwarder:  An entity that steers service-specific
       traffic along a CATS-computed path that leads to an Egress CATS-
@@ -614,7 +621,7 @@ Table of Contents
    service contact instance.
 
    In the example shown in Figure 2, when the client sends a service
-   request to "CATS-Forwarder 1", the forwarder solicits the C-PS to
+   request via "CATS-Forwarder 1", the forwarder solicits the C-PS to
    select a service contact instance hosted by a service site that can
    be accessed through a particular Egress CATS-Forwarder.  The C-PS
    also determines a path to that Egress CATS-Forwarder.  This
