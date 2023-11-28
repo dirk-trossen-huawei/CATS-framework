@@ -600,11 +600,8 @@ Table of Contents
    per-site computing-related metrics, the per-instance CIS-ID
    information will not be included in the advertisement.  Instead, a
    per-site CIS-ID may be used in case multiple sites are connected to
-   the Egress CATS-Forwarder to explicitly indicate the site the
-   aggregated metrics come from.
-
-   A CIS-ID is not required if the service site can support consistently
-   service contact instance selection.
+   the Egress CATS-Forwarder to explicitly indicate the site from where
+   the aggregated metrics come.
 
 4.4.  Service Access Processing
 
