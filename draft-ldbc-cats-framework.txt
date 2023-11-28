@@ -417,8 +417,8 @@ Table of Contents
    responsible for associating incoming packets from clients with
    existing service requests.  CATS classifiers also ensure that packets
    that are bound to a specific service contact instance are all
-   forwarded along the same path that leads to the same service contact
-   instance, as instructed by a C-PS.
+   forwarded towards that same service contact instance, as instructed
+   by a C-PS.
 
    CATS classifiers are typically hosted in CATS-Forwarders.
 
