@@ -5,7 +5,7 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 27 May 2024                                        China Mobile
+Expires: 31 May 2024                                        China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
@@ -16,7 +16,7 @@ Expires: 27 May 2024                                        China Mobile
                                                                      ZTE
                                                                G. Mishra
                                                             Verizon Inc.
-                                                        24 November 2023
+                                                        28 November 2023
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 May 2024.
+   This Internet-Draft will expire on 31 May 2024.
 
 Copyright Notice
 
@@ -80,7 +80,7 @@ Table of Contents
      4.1.  Provisioning of CATS Components
      4.2.  Service Announcement
      4.3.  Metrics Distribution
-     4.4.  Service Request Processing
+     4.4.  Service Access Processing
      4.5.  Service Contact Instance Affinity
    5.  Security Considerations
    6.  Privacy Considerations
@@ -598,7 +598,7 @@ Table of Contents
    A CIS-ID is not required if the service site can support consistently
    service contact instance selection.
 
-4.4.  Service Request Processing
+4.4.  Service Access Processing
 
    A C-PS computes paths that lead to Egress CATS-Forwarders according
    to the service and network metrics that have been advertised.  A C-PS
