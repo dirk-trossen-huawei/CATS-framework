@@ -251,7 +251,7 @@ Table of Contents
    Egress CATS-Forwarder:  An entity that is located at the end of a
       CATS-computed path and which connects to a CATS-serviced site.
 
-   CATS Path Selector (C-PS):  A computation logic that calculates and
+   CATS Path Selector (C-PS):  A functional entity that computes and
       selects paths towards service locations and instances and which
       accommodates the requirements of service requests.  Such a path
       computation engine takes into account the service and network
