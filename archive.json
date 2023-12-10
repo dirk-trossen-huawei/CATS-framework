@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-07T01:01:45.998131+00:00",
+  "timestamp": "2023-12-10T01:05:57.776271+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -391,7 +391,7 @@
       "labels": [],
       "body": "> The C-SMA then advertises the CS-IDs along with the metrics to be received by all C-PSs in the network\r\n\r\nThis encourages some clarification about the respective roles and responsibilities of all the C-PSes deployed in the network. let alone the security and consistency issues that may arise because of such design. This should deserve an editor's note at least.",
       "createdAt": "2023-03-08T12:03:16Z",
-      "updatedAt": "2023-11-29T15:56:06Z",
+      "updatedAt": "2023-12-08T09:59:32Z",
       "closedAt": null,
       "comments": [
         {
@@ -421,6 +421,27 @@
           "body": "We may have multiple types of deployment. In one deployment, the C-SMA can built the connections with the ingress CATS Forwarder, so it can send the mertics directly. \r\n\r\nBut in other use cases/deployments, the C-SMA might do not have the right to build the connection with ingress CATS-Forwarder. It miht only have a control plane connection with the attached Egress CATS-forwarder,  so the only way is to send the route/CS-ID with the metrics to the egress CATS-Forwarder. Then the Egress CATS-Forwarder will do the rest. Especially in VPN scenarios, the original instance route will only be sent to the Egress CATS-Forwarder/PE, and the Egress CATS-Forwarder will redistribute the route/CS-ID with metric in VPN route style. \r\n\r\nTherefore, I think it is valid to describe these two ways.",
           "createdAt": "2023-11-29T15:56:05Z",
           "updatedAt": "2023-11-29T15:56:05Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi Med,  any feedback of my reply\uff1fIf you agree, we can merge it into this updat, if not, we can continue the discussion, and address it in the future. Same to other issues that I have replied to you.",
+          "createdAt": "2023-12-07T16:47:56Z",
+          "updatedAt": "2023-12-07T16:47:56Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "@muzixing, please propose the text as a PR. Will act on it :-)",
+          "createdAt": "2023-12-07T17:15:41Z",
+          "updatedAt": "2023-12-07T17:15:41Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "will do. But I am planning to post a new revision(current text) this week. We can address this in the next revision. so no need to be rush.",
+          "createdAt": "2023-12-08T09:59:31Z",
+          "updatedAt": "2023-12-08T09:59:31Z"
         }
       ]
     },
@@ -819,6 +840,22 @@
           "updatedAt": "2023-11-29T15:58:28Z"
         }
       ]
+    },
+    {
+      "number": 53,
+      "id": "I_kwDOJBcdGs55EBXF",
+      "title": "Jim's comment of Service ID mapping",
+      "url": "https://github.com/boucadair/CATS-framework/issues/53",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "    [Jim Guichard as individual] From the WG pespective, we do have some high level discussion of compute metrics and deciding which service instance to use, but we do not have some specific discussion of service identifiers. For example, how to map the service ID to a specific service instance in the real network, and what\u2019s the excat metrics for this service. We had some discussions in SFC WG but haven\u2019t solved it yet.\r\n              [Adrian] Yes. The problem is even worse for CATS. For CATS little clusters of packets go to a specific service instance, but in SFC all packets in a flow will be forwarded to the same service instance., but in CATS, they might be forwarded to different service instances. Problem should be solved.\r\n",
+      "createdAt": "2023-12-07T16:20:26Z",
+      "updatedAt": "2023-12-07T16:20:26Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -2407,6 +2444,32 @@
       "mergeCommit": {
         "oid": "e2f2ff887bf07f93db35c5505f5a3dbde1bbc6c6"
       },
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 54,
+      "id": "PR_kwDOJBcdGs5hhxel",
+      "title": "Update draft-ldbc-cats-framework.md",
+      "url": "https://github.com/boucadair/CATS-framework/pull/54",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "fixed typo of hyper-link",
+      "createdAt": "2023-12-08T14:12:29Z",
+      "updatedAt": "2023-12-08T14:12:29Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "d6e605ac8f63b8e37df6dd93f8da899e5db0453f",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "1e81dc6006ef76d5379f3e6c822f7bd0b4ff50a9",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
       "comments": [],
       "reviews": []
     }
