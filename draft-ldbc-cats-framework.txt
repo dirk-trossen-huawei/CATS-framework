@@ -5,7 +5,7 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 1 June 2024                                        China Mobile
+Expires: 16 June 2024                                       China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
@@ -16,7 +16,7 @@ Expires: 1 June 2024                                        China Mobile
                                                                      ZTE
                                                                G. Mishra
                                                             Verizon Inc.
-                                                        29 November 2023
+                                                        14 December 2023
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +44,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 June 2024.
+   This Internet-Draft will expire on 16 June 2024.
 
 Copyright Notice
 
@@ -127,8 +127,9 @@ Table of Contents
    instance that will service a request according to a set of network
    and computing metrics.  That selection may not necessarily reveal the
    actual service instance that will be invoked, e.g., in hierarchical
-   or recursive contexts.  The metrics are aggerated; that is, they
-   reflect the collective resources involved in a service instance.
+   or recursive contexts.  Therefore, the metrics of the service contact
+   instance may be the aggregated metrics from multiple service
+   instances.
 
    The CATS framework is an overlay framework for the selection of the
    suitable service contact instance(s) from a set of candidates.  The
@@ -221,9 +222,9 @@ Table of Contents
       service load-balancer).
 
    Computing-aware forwarding (or steering, computing):  A forwarding
-      (or steeting, computing) scheme which takes as input a set of
-      metrics that reflect the capabilities and state of computing
-      resources.
+      (or steering, computing) scheme which takes a set of metrics that
+      reflect the capabilities and state of computing resources as
+      input.
 
    Service request:  A request to access or invoke a specific service.
       Such a request is steered to a service contact instance via CATS-
@@ -447,7 +448,10 @@ Table of Contents
    thereof) can be used by a C-PS.  Using aggregated per-site computing
    related metrics appears as a privileged option scalability-wise, but
    relies on Egress CATS-Forwarders that connect to various service
-   contact instances to select the proper service contact instance.
+   contact instances to select the proper service contact instance.  An
+   Egress CATS-Forwarder may choose to aggregate the metrics from
+   different sites as well.  In this case, the Egress CATS-Forwarder
+   will choose the best site by itself when the packets arrive at it.
 
 3.3.7.  Underlay Infrastructure
 
@@ -500,10 +504,14 @@ Table of Contents
    identifies the service.  The C-SMA may aggregate the metrics for
    multiple service contact instances, or maintain them separately or
    both.  The C-SMA then advertises the CS-IDs along with the metrics to
-   be received by all C-PSes in the network.  The service metrics
-   include computing-related metrics and potentially other service-
-   specific metrics like the number of end-users who access the service
-   contact instance at any given time, their location, etc.
+   related C-PSes in the network.  Depending on the deployment choice,
+   the CS-IDs among with the metrics may be distributed to an Egress
+   CATS Forwader firstly and then be redistributed by the Egress CATS
+   Forwarder to related C-PSes, or they may be collected by a central
+   entity and then be distributed to the related C-PSes.  The service
+   metrics include computing-related metrics and potentially other
+   service-specific metrics like the number of end-users who access the
+   service contact instance at any given time, their location, etc.
 
    Computing metrics may change very frequently (see
    [I-D.ietf-cats-usecases-requirements] for a discussion).  How
@@ -615,26 +623,18 @@ Table of Contents
    characteristics (e.g., in terms of maximum latency) and the selected
    service contact instance.
 
-   In the example shown in Figure 2, when the client sends a service
-   request via "CATS-Forwarder 1", the forwarder solicits the C-PS to
-   select a service contact instance hosted by a service site that can
-   be accessed through a particular Egress CATS-Forwarder.  The C-PS
-   also determines a path to that Egress CATS-Forwarder.  This
-   information is provided to the Ingress CATS-Forwarder ("CATS-
-   Forwarder 1") so that it can forward packets to their proper
-   destination, as computed by the C-PS.
-
-   Access to a service consists of one or more service-specific packets
-   (e.g., Session Initiation Protocol (SIP) [RFC3261], HTTP
-   {[?RFC9112}}, Real-Time Streaming Protocol (RTSP) [RFC7826]) sent by
-   the client via an Ingress CATS-Forwarder to which the client is
-   connected to.  The Ingress CATS-Forwarder classifies incoming packets
-   received from clients by soliciting the CATS classifier (C-TC).  When
-   a matching classification entry is found for the packets, the Ingress
+   In the example shown in Figure 2, the client sends a service access
+   to the network through the "CATS-Forwarder 1", which is an Ingress
+   CATS-Forwarder.  Note that, a service access may consist of one or
+   more service packets (e.g., Session Initiation Protocol (SIP)
+   [RFC3261], HTTP [RFC9112], or Real-Time Streaming Protocol (RTSP)
+   [RFC7826]).  The Ingress CATS-Forwarder classifies the packets using
+   the information provided by the CATS classifier (C-TC).  When a
+   matching classification entry is found for the packets, the Ingress
    CATS-Forwarder encapsulates and forwards them to the C-PS selected
-   Egress CATS-Forwarder.  Then, when these packets reach the Egress
-   CATS-Forwarder, the outer header of the possible overlay
-   encapsulation is removed and inner packets are sent to the relevant
+   Egress CATS-Forwarder.  When these packets reach the Egress CATS-
+   Forwarder, the outer header of the possible overlay encapsulation
+   will be removed and the inner packets will be sent to the relevant
    service contact instance.
 
       Note that multi-homed clients may be connected to multiple CATS
@@ -789,6 +789,10 @@ Table of Contents
               and M. Stiemerling, Ed., "Real-Time Streaming Protocol
               Version 2.0", RFC 7826, DOI 10.17487/RFC7826, December
               2016, <https://www.rfc-editor.org/rfc/rfc7826>.
+
+   [RFC9112]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP/1.1", STD 99, RFC 9112, DOI 10.17487/RFC9112,
+              June 2022, <https://www.rfc-editor.org/rfc/rfc9112>.
 
 Appendix A.  Acknowledgements
 
