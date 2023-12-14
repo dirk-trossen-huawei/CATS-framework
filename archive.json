@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-12T01:02:21.914068+00:00",
+  "timestamp": "2023-12-14T01:01:11.482883+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -391,7 +391,7 @@
       "labels": [],
       "body": "> The C-SMA then advertises the CS-IDs along with the metrics to be received by all C-PSs in the network\r\n\r\nThis encourages some clarification about the respective roles and responsibilities of all the C-PSes deployed in the network. let alone the security and consistency issues that may arise because of such design. This should deserve an editor's note at least.",
       "createdAt": "2023-03-08T12:03:16Z",
-      "updatedAt": "2023-12-08T09:59:32Z",
+      "updatedAt": "2023-12-12T20:21:32Z",
       "closedAt": null,
       "comments": [
         {
@@ -442,6 +442,13 @@
           "body": "will do. But I am planning to post a new revision(current text) this week. We can address this in the next revision. so no need to be rush.",
           "createdAt": "2023-12-08T09:59:31Z",
           "updatedAt": "2023-12-08T09:59:31Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@Deguello1 please review the PR to see if it is ok to you \r\nhttps://github.com/boucadair/CATS-framework/pull/54/commits/1aebab3b00f29a0a131f25a410bb5881b7839af3",
+          "createdAt": "2023-12-12T20:21:31Z",
+          "updatedAt": "2023-12-12T20:21:31Z"
         }
       ]
     },
@@ -2459,19 +2466,40 @@
       "labels": [],
       "body": "fixed typo of hyper-link",
       "createdAt": "2023-12-08T14:12:29Z",
-      "updatedAt": "2023-12-08T14:12:29Z",
+      "updatedAt": "2023-12-13T19:49:51Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "d6e605ac8f63b8e37df6dd93f8da899e5db0453f",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "1e81dc6006ef76d5379f3e6c822f7bd0b4ff50a9",
+      "headRefOid": "1aebab3b00f29a0a131f25a410bb5881b7839af3",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs5qHl4N",
+          "commit": {
+            "abbreviatedOid": "1aebab3"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-12-13T19:49:51Z",
+          "updatedAt": "2023-12-13T19:49:51Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "```suggestion\r\nIn the example shown in  {{fig-cats-example-overlay}}, the client sends a service access to the network through the \"CATS-Forwarder 1\", which is an Ingress CATS-Forwarder. Note that, a service access may consist of one or more service packets (e.g., Session Initiation Protocol (SIP) {{?RFC3261}}, HTTP {{?RFC9112}}, or Real-Time Streaming Protocol (RTSP) {{?RFC7826}}). The Ingress CATS-Forwarder classifies the packets using the information provided by the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation will be removed and the inner packets will be sent to the relevant service contact instance.\r\n```",
+              "createdAt": "2023-12-13T19:49:51Z",
+              "updatedAt": "2023-12-13T19:49:51Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
