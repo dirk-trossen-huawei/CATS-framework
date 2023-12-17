@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-12-14T01:01:11.482883+00:00",
+  "timestamp": "2023-12-17T01:05:58.477543+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -384,15 +384,15 @@
       "id": "I_kwDOJBcdGs5gRVY8",
       "title": "About several C-PS computation logics in the network",
       "url": "https://github.com/boucadair/CATS-framework/issues/22",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "Deguello1",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "> The C-SMA then advertises the CS-IDs along with the metrics to be received by all C-PSs in the network\r\n\r\nThis encourages some clarification about the respective roles and responsibilities of all the C-PSes deployed in the network. let alone the security and consistency issues that may arise because of such design. This should deserve an editor's note at least.",
       "createdAt": "2023-03-08T12:03:16Z",
-      "updatedAt": "2023-12-12T20:21:32Z",
-      "closedAt": null,
+      "updatedAt": "2023-12-14T16:37:10Z",
+      "closedAt": "2023-12-14T16:37:10Z",
       "comments": [
         {
           "author": "VMatrix1900",
@@ -764,15 +764,15 @@
       "id": "I_kwDOJBcdGs53w1Za",
       "title": "(Section 4.4) Pull/Push Modes",
       "url": "https://github.com/boucadair/CATS-framework/issues/49",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Section 4.4 have the following, which may seem to be contradicting:\r\n\r\n> In the example shown in [Figure 2](https://boucadair.github.io/CATS-framework/draft-ldbc-cats-framework.html#fig-cats-example-overlay), when the client sends a service request to \"CATS-Forwarder 1\", the forwarder solicits the C-PS to select a service contact instance hosted by a service site that can be accessed through a particular Egress CATS-Forwarder.\r\n\r\nand\r\n\r\n> The Ingress CATS-Forwarder classifies incoming packets received from clients by soliciting the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. \r\n\r\nWe need to discuss if we allow both Pull/Push modes or only a mode. Then, make sure we are consistent in the doc",
       "createdAt": "2023-11-24T08:13:15Z",
-      "updatedAt": "2023-11-28T16:50:12Z",
-      "closedAt": null,
+      "updatedAt": "2023-12-14T16:59:32Z",
+      "closedAt": "2023-12-14T16:59:32Z",
       "comments": [
         {
           "author": "VMatrix1900",
@@ -787,6 +787,13 @@
           "body": "I think both modes are needed. However, in this section, I do not think the text emphasize this. \r\nIt describes the processing of first packet and the following packets. so we may rephrase it as \r\n\r\nIn the example shown in [Figure 2](https://datatracker.ietf.org/doc/html/draft-ldbc-cats-framework-03#fig-cats-example-overlay), the client sends a service access to the network though the \"CATS-Forwarder 1\" that is an Ingress CATS-Forwarder.\r\nNote that, a service access consists of one or more service packets. The Ingress CATS-Forwarder classifies incoming packets received from clients by the information provided by the CATS classifier (C-TC). When a matching classification entry is found for the packets, the Ingress CATS-Forwarder encapsulates and forwards them to the C-PS selected Egress CATS-Forwarder. When these packets reach the Egress CATS-Forwarder, the outer header of the possible overlay encapsulation is removed and inner packets are sent to the relevant service contact instance.\r\n\r\nwhat do  you think?",
           "createdAt": "2023-11-28T16:50:10Z",
           "updatedAt": "2023-11-28T16:50:10Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This has been closed by https://github.com/boucadair/CATS-framework/pull/54",
+          "createdAt": "2023-12-14T16:59:32Z",
+          "updatedAt": "2023-12-14T16:59:32Z"
         }
       ]
     },
@@ -813,7 +820,7 @@
       "id": "I_kwDOJBcdGs54FSkM",
       "title": "Editorial comments of Computing-aware forwarding definition",
       "url": "https://github.com/boucadair/CATS-framework/issues/52",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -822,8 +829,8 @@
       ],
       "body": "Computing-aware forwarding (or steeting, computing):\r\nA forwarding (or steeting, computing) scheme which takes as input a set of metrics that reflect the capabilities and state of computing resources.\r\n\r\nThe syntax seems incorrect or hard to be understood.\r\nhope to make it clear for readers. \r\n\r\n",
       "createdAt": "2023-11-28T15:03:53Z",
-      "updatedAt": "2023-11-29T15:58:30Z",
-      "closedAt": null,
+      "updatedAt": "2023-12-14T16:37:11Z",
+      "closedAt": "2023-12-14T16:37:11Z",
       "comments": [
         {
           "author": "muzixing",
@@ -861,6 +868,22 @@
       "body": "    [Jim Guichard as individual] From the WG pespective, we do have some high level discussion of compute metrics and deciding which service instance to use, but we do not have some specific discussion of service identifiers. For example, how to map the service ID to a specific service instance in the real network, and what\u2019s the excat metrics for this service. We had some discussions in SFC WG but haven\u2019t solved it yet.\r\n              [Adrian] Yes. The problem is even worse for CATS. For CATS little clusters of packets go to a specific service instance, but in SFC all packets in a flow will be forwarded to the same service instance., but in CATS, they might be forwarded to different service instances. Problem should be solved.\r\n",
       "createdAt": "2023-12-07T16:20:26Z",
       "updatedAt": "2023-12-07T16:20:26Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 55,
+      "id": "I_kwDOJBcdGs550UNw",
+      "title": "potential text merged from https://datatracker.ietf.org/doc/draft-yao-cats-awareness-architecture/",
+      "url": "https://github.com/boucadair/CATS-framework/issues/55",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Still waiting for text from authors from https://datatracker.ietf.org/doc/draft-yao-cats-awareness-architecture/\r\nwill reach out to them later.",
+      "createdAt": "2023-12-15T13:45:47Z",
+      "updatedAt": "2023-12-15T13:46:15Z",
       "closedAt": null,
       "comments": []
     }
@@ -2459,25 +2482,35 @@
       "id": "PR_kwDOJBcdGs5hhxel",
       "title": "Update draft-ldbc-cats-framework.md",
       "url": "https://github.com/boucadair/CATS-framework/pull/54",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "fixed typo of hyper-link",
       "createdAt": "2023-12-08T14:12:29Z",
-      "updatedAt": "2023-12-13T19:49:51Z",
+      "updatedAt": "2023-12-14T16:37:10Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "d6e605ac8f63b8e37df6dd93f8da899e5db0453f",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
-      "headRefOid": "1aebab3b00f29a0a131f25a410bb5881b7839af3",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "f338a616cf8d6f1cd259031a472f399555a72d55",
+      "closedAt": "2023-12-14T16:37:09Z",
+      "mergedAt": "2023-12-14T16:37:09Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "fea0b7e51268778da4661641b7530aa456e64587"
+      },
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "please review. I guess we have addressed major issues till now. Let's ask for WG adoption. Though we might add some text from another draft, but it can be done later.",
+          "createdAt": "2023-12-14T16:06:01Z",
+          "updatedAt": "2023-12-14T16:06:01Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDOJBcdGs5qHl4N",
@@ -2498,6 +2531,19 @@
               "updatedAt": "2023-12-13T19:49:51Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDOJBcdGs5qOfpr",
+          "commit": {
+            "abbreviatedOid": "f338a61"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-12-14T16:18:45Z",
+          "updatedAt": "2023-12-14T16:18:45Z",
+          "comments": []
         }
       ]
     }
