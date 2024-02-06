@@ -322,7 +322,8 @@ Table of Contents
       +----------------------------------+  |         +--------+
       |           Data Plane             |  |         | +--------+
       +----------------------------------+  |<=======>| |Service |
-                                            |         +-|instance|
+                                            |         +-|Contact |
+                                            |           |Instance|
                                             |           +--------+
 
                Network Domain                  Computing Domain
