@@ -620,9 +620,8 @@ Table of Contents
    and invoke the compute function required by a service request.
    Similar to service-related metrics, the network-related metrics can
    be distributed using distributed, centralized, or hybrid schemes.
-   This document will not describe such details since this is a
-   deployment choice of existing protocols, and CATS framework does not
-   make any modifications on it.
+   This document does not describe such details since this is a
+   deployment-specific.
 
    Network metrics may also change over time.  Dynamic routing protocols
    may take advantage of some information or capabilities to prevent the
@@ -702,7 +701,7 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
    the Egress CATS-Forwarder to explicitly indicate the site from where
    the aggregated metrics come.
 
-   If the CATS framework is deployed using a centralized model, the
+   If the CATS framework is implemented using a centralized model, the
    metric can be, e.g., distributed as illustrated in Figure 4.
 
                            Service CS-ID 1, instance CIS-ID 1 <metrics>
@@ -744,8 +743,8 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
 
    Figure 4: An Example of CATS Metric Distribution in Centralized Model
 
-   If the CATS Framework is deployed using an hybrid model, the metric
-   can be distributed, e.g., as illustrated in the Figure 5.  For
+   If the CATS framework is implemented using an hybrid model, the
+   metric can be distributed, e.g., as illustrated in the Figure 5.  For
    example, the metrics 1,2,3 associated with the CS-ID1 are collected
    by the centralized C-PS, and the metrics 4 and 5 are distributed via
    distributed protocols to the ingress CATS-Forwarder directly.  For a
@@ -814,8 +813,8 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
    via the network through the "CATS-Forwarder 1", which is an Ingress
    CATS-Forwarder.  Note that, a service access may consist of one or
    more service packets (e.g., Session Initiation Protocol (SIP)
-   [RFC3261], HTTP [RFC9112], IPv6[RFC8200], SRv6[RFC8754] or Real-Time
-   Streaming Protocol (RTSP) [RFC7826]) that carry the CS-ID and
+   [RFC3261], HTTP [RFC9112], IPv6 [RFC8200], SRv6 [RFC8754] or Real-
+   Time Streaming Protocol (RTSP) [RFC7826]) that carry the CS-ID and
    potential parameters.  The Ingress CATS-Forwarder classifies the
    packets using the information provided by the CATS classifier (C-TC).
    When a matching classification entry is found for the packets, the
