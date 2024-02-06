@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-04T01:02:20.935411+00:00",
+  "timestamp": "2024-02-06T00:57:58.249975+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -2546,6 +2546,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 56,
+      "id": "PR_kwDOJBcdGs5mEqRS",
+      "title": "Muzixing add three models",
+      "url": "https://github.com/boucadair/CATS-framework/pull/56",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Separate the merge text into three commits, I think the first two are ok. The last one may need to review.\r\n\r\nFor now, I think it is OK to be added, but we need more discussion of it and try to polish it better to fit into the current draft.\r\n\r\nBut we can merge them and ask for WG adoption call, then update it in the future.\r\n\r\nPlease review, thanks!",
+      "createdAt": "2024-02-05T21:10:22Z",
+      "updatedAt": "2024-02-05T21:10:22Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "fea0b7e51268778da4661641b7530aa456e64587",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "muzixing-add-three-models",
+      "headRefOid": "0d1ab64868389ebf0e68dc409a06d5347a956642",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
