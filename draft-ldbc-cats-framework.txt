@@ -431,6 +431,8 @@ Table of Contents
    by other components, such as CATS-Forwarders or CATS Path Selectors
    (C-PS) (Section 3.4.4).
 
+   C-NMA is likely to leverage existing techniques (e.g., [RFC8571]).
+
    Figure 2 shows a single, standalone C-NMA within the underlay
    network.  There may be one or more C-NMAs for an underlay network.
 
@@ -987,6 +989,12 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
               (IPv6) Specification", STD 86, RFC 8200,
               DOI 10.17487/RFC8200, July 2017,
               <https://www.rfc-editor.org/rfc/rfc8200>.
+
+   [RFC8571]  Ginsberg, L., Ed., Previdi, S., Wu, Q., Tantsura, J., and
+              C. Filsfils, "BGP - Link State (BGP-LS) Advertisement of
+              IGP Traffic Engineering Performance Metric Extensions",
+              RFC 8571, DOI 10.17487/RFC8571, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8571>.
 
    [RFC8754]  Filsfils, C., Ed., Dukes, D., Ed., Previdi, S., Leddy, J.,
               Matsushima, S., and D. Voyer, "IPv6 Segment Routing Header
