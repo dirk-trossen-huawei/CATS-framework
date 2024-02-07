@@ -931,6 +931,14 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
               <https://datatracker.ietf.org/doc/html/draft-ietf-teas-
               rfc3272bis-27>.
 
+   [I-D.yao-cats-awareness-architecture]
+              Yao, H., wang, X., Li, Z., Huang, D., and C. Lin,
+              "Computing and Network Information Awareness (CNIA) system
+              architecture for CATS", Work in Progress, Internet-Draft,
+              draft-yao-cats-awareness-architecture-02, 22 October 2023,
+              <https://datatracker.ietf.org/doc/html/draft-yao-cats-
+              awareness-architecture-02>.
+
    [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
               STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
               <https://www.rfc-editor.org/rfc/rfc1034>.
@@ -997,6 +1005,9 @@ Appendix A.  Acknowledgements
    Arkko, Mingyu Wu, Haibo Wang, Xia Chen, Jianwei Mao, Guofeng Qian,
    Zhenbin Li, Xinyue Zhang, and Nagendra Kumar for their comments and
    suggestions.
+
+   Some text about various deployment models was originally documented
+   in [I-D.yao-cats-awareness-architecture].
 
 Contributors
 
