@@ -5,18 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 9 August 2024                                      China Mobile
+Expires: 10 August 2024                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                                G. Huang
-                                                                     ZTE
-                                                               G. Mishra
-                                                            Verizon Inc.
-                                                         6 February 2024
+                                                         7 February 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -44,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 9 August 2024.
+   This Internet-Draft will expire on 10 August 2024.
 
 Copyright Notice
 
@@ -1004,6 +1000,16 @@ Appendix A.  Acknowledgements
 
 Contributors
 
+   Guangping Huang
+   ZTE
+   Email: huang.guangping@zte.com.cn
+
+
+   Gyan Mishra
+   Verizon Inc.
+   Email: hayabusagsm@gmail.com
+
+
    Huijuan Yao
    China Mobile
    Email: yaohuijuan@chinamobile.com
@@ -1079,15 +1085,3 @@ Authors' Addresses
    Juniper Networks, Inc.
    United States of America
    Email: jdrake@juniper.net
-
-
-   Guangping Huang
-   ZTE
-   China
-   Email: huang.guangping@zte.com.cn
-
-
-   Gyan Mishra
-   Verizon Inc.
-   United States of America
-   Email: hayabusagsm@gmail.com
