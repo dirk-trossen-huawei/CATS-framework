@@ -305,7 +305,8 @@ Table of Contents
 
 3.3.  Framework Overview
 
-   A high-level view of the CATS framework is illustrated in Figure 1.
+   A high-level view of the CATS framework, without expanding the
+   functional entities in the network, is illustrated in Figure 1.
 
       +----------------------------------+  |         +--------+
       |         Management Plane         |  |         |        |
@@ -324,7 +325,7 @@ Table of Contents
 
                Network Domain                  Computing Domain
 
-                          Figure 1: CATS Framework
+                      Figure 1: Main CATS Interactions
 
    Starting from the bottom part of Figure 1 and moving to the upper
    part, the following planes are defined:
