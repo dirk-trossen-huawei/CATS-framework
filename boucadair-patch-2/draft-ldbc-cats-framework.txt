@@ -101,11 +101,11 @@ Table of Contents
    request).  In such infrastructures, service-specific traffic is often
    directed to the closest service site from a routing perspective
    without considering the actual network state (e.g., traffic
-   congestion conditions).
+   congestion conditions) or the service site state.
 
    As described in [I-D.ietf-cats-usecases-requirements], traffic
    steering that takes into account computing resource metrics would
-   benefit several services, including latency-sensitive service like
+   benefit several services, including latency-sensitive services like
    immersive services that rely upon the use of augmented reality or
    virtual reality (AR/VR) techniques.  This document provides an
    architectural framework that aims at facilitating the making of
@@ -113,13 +113,13 @@ Table of Contents
    environments where computing service resources are deployed.
 
    The Computing-Aware Traffic Steering (CATS) framework assumes that
-   there may be multiple service instances that are providing one given
-   service.  Each of these service instances can be accessed via a
-   service contact instance running on different service sites.  A
-   single service site may have limited computing resources available at
-   a given time, whereas the various service sites may experience
-   different resource availability issues over time.  A single service
-   site may host one or multiple service contact instances.
+   there might be multiple service instances that are providing one
+   given service.  Each of these service instances can be accessed via a
+   service contact instance.  A single service site may have limited
+   computing resources available at a given time, whereas the various
+   service sites may experience different resource availability issues
+   over time.  A single service site may host one or multiple service
+   contact instances.
 
    Steering in CATS is about selecting the appropriate service contact
    instance that will service a request according to a set of network
@@ -430,6 +430,8 @@ Table of Contents
    C-NMAs may be implemented as standalone components or may be hosted
    by other components, such as CATS-Forwarders or CATS Path Selectors
    (C-PS) (Section 3.4.4).
+
+   C-NMA is likely to leverage existing techniques (e.g., [RFC8571]).
 
    Figure 2 shows a single, standalone C-NMA within the underlay
    network.  There may be one or more C-NMAs for an underlay network.
@@ -987,6 +989,12 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
               (IPv6) Specification", STD 86, RFC 8200,
               DOI 10.17487/RFC8200, July 2017,
               <https://www.rfc-editor.org/rfc/rfc8200>.
+
+   [RFC8571]  Ginsberg, L., Ed., Previdi, S., Wu, Q., Tantsura, J., and
+              C. Filsfils, "BGP - Link State (BGP-LS) Advertisement of
+              IGP Traffic Engineering Performance Metric Extensions",
+              RFC 8571, DOI 10.17487/RFC8571, March 2019,
+              <https://www.rfc-editor.org/rfc/rfc8571>.
 
    [RFC8754]  Filsfils, C., Ed., Dukes, D., Ed., Previdi, S., Leddy, J.,
               Matsushima, S., and D. Voyer, "IPv6 Segment Routing Header
