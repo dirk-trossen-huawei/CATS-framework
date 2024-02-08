@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 10 August 2024                                     China Mobile
+Expires: 11 August 2024                                     China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                         7 February 2024
+                                                         8 February 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 August 2024.
+   This Internet-Draft will expire on 11 August 2024.
 
 Copyright Notice
 
@@ -584,7 +584,7 @@ Table of Contents
    in the network.  Depending on deployment choice, CS-IDs with metrics
    may be distributed in different ways.
 
-   For example, in Distributed model, CS-IDs with metrics can be
+   For example, in a distributed model, CS-IDs with metrics can be
    distributed from the C-SMA to an Egress CATS Forwarder firstly and
    then be redistributed by the Egress CATS Forwarder to related C-PSes
    that are integrated into Ingress CATS Forwarders.
@@ -691,7 +691,8 @@ Table of Contents
           Service CS-ID 1, instance CIS-ID 3 <metrics>
           Service CS-ID 2, <metrics>
 
-Figure 3: An Example of CATS Metric Distribution in Distributed Model
+        Figure 3: An Example of CATS Metric Dessimination in a
+                          Distributed Model
 
    The example in Figure 3 mainly describes a per-instance computing-
    related metric distribution.  In the case of distributing aggregated
@@ -800,7 +801,7 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
    A C-PS computes paths that lead to Egress CATS-Forwarders according
    to both service and network metrics that were advertised.  A C-PS may
    be collocated with an Ingress CATS-Forwarder (as shown in Figure 3)
-   or logically centralized (in a Centralized model or Hybrid model).
+   or logically centralized (in a centralized model or hybrid model).
 
    This document does not specify any algorithm for path computation and
    selection purposes to be supported by C-PSes.  These algorithms are
@@ -833,11 +834,11 @@ Figure 3: An Example of CATS Metric Distribution in Distributed Model
 4.5.  Service Contact Instance Affinity
 
    Instance affinity means that packets that belong to a flow associated
-   with a service should always be sent to the same Egress CATS-
-   Forwarder which will forward them to the same service contact
+   with a service should always be sent to the same service contact
    instance.  Furthermore, packets of a given flow should be forwarded
    along the same path to avoid mis-ordering and to prevent the
-   introduction of unpredictable latency variations.
+   introduction of unpredictable latency variations.  Specifically, the
+   same Egress CATS-Forwarder may be sollicited to forward the packets.
 
    The affinity is determined at the time of newly formulated service
    requests.
