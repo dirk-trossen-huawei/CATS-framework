@@ -1593,7 +1593,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#section-3.4.3" class="section-number selfRef">3.4.3. </a><a href="#name-cats-network-metric-agent-c" class="section-name selfRef">CATS Network Metric Agent (C-NMA)</a>
           </h4>
 <p id="section-3.4.3-1">The CATS Network Metric Agent (C-NMA) is a functional component that gathers information about the state of the underlay network. The C-NMAs may be implemented as standalone components or may be hosted by other components, such as CATS-Forwarders or CATS Path Selectors (C-PS) (<a href="#sec-cps" class="auto internal xref">Section 3.4.4</a>).<a href="#section-3.4.3-1" class="pilcrow">¶</a></p>
-<p id="section-3.4.3-2">C-NMA is likely to leverage existing techniques (e.g., <span>[<a href="#RFC8571" class="cite xref">RFC8571</a>]</span>).<a href="#section-3.4.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.4.3-2">C-NMA is likely to leverage existing techniques (e.g., <span>[<a href="#RFC7471" class="cite xref">RFC7471</a>]</span>, <span>[<a href="#RFC8570" class="cite xref">RFC8570</a>]</span>, and <span>[<a href="#RFC8571" class="cite xref">RFC8571</a>]</span>).<a href="#section-3.4.3-2" class="pilcrow">¶</a></p>
 <p id="section-3.4.3-3"><a href="#fig-cats-components" class="auto internal xref">Figure 2</a> shows a single, standalone C-NMA within the underlay network. There may be one or more C-NMAs for an underlay network.<a href="#section-3.4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1893,7 +1893,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#section-6" class="section-number selfRef">6. </a><a href="#name-privacy-considerations" class="section-name selfRef">Privacy Considerations</a>
       </h2>
 <p id="section-6-1">Means to prevent that on-path nodes in the underlay infrastructure to fingerprint and track clients (e.g., determine which client accesses which service) must be supported by CATS solutions. More generally, personal data must not be exposed to external parties by CATS beyond what is carried in the packet that was originally issued by the client.<a href="#section-6-1" class="pilcrow">¶</a></p>
-<p id="section-6-2">Since the service will, in some cases, need to know about applications, clients, and even user identity, it is likely that the C-PS computed path information will need to be encrypted if the client/service communication is not already encrypted.<a href="#section-6-2" class="pilcrow">¶</a></p>
+<p id="section-6-2">Since the service will, in some cases, need to know about applications, clients, and even user identity, the C-PS computed path information should be encrypted if the client/service communication is not already encrypted.<a href="#section-6-2" class="pilcrow">¶</a></p>
 <p id="section-6-3">For more discussion about privacy, refer to <span>[<a href="#RFC6462" class="cite xref">RFC6462</a>]</span> and <span>[<a href="#RFC6973" class="cite xref">RFC6973</a>]</span>.<a href="#section-6-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1951,6 +1951,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <dd>
 <span class="refAuthor">Cooper, A.</span>, <span class="refAuthor">Tschofenig, H.</span>, <span class="refAuthor">Aboba, B.</span>, <span class="refAuthor">Peterson, J.</span>, <span class="refAuthor">Morris, J.</span>, <span class="refAuthor">Hansen, M.</span>, and <span class="refAuthor">R. Smith</span>, <span class="refTitle">"Privacy Considerations for Internet Protocols"</span>, <span class="seriesInfo">RFC 6973</span>, <span class="seriesInfo">DOI 10.17487/RFC6973</span>, <time datetime="2013-07" class="refDate">July 2013</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc6973">https://www.rfc-editor.org/rfc/rfc6973</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC7471">[RFC7471]</dt>
+      <dd>
+<span class="refAuthor">Giacalone, S.</span>, <span class="refAuthor">Ward, D.</span>, <span class="refAuthor">Drake, J.</span>, <span class="refAuthor">Atlas, A.</span>, and <span class="refAuthor">S. Previdi</span>, <span class="refTitle">"OSPF Traffic Engineering (TE) Metric Extensions"</span>, <span class="seriesInfo">RFC 7471</span>, <span class="seriesInfo">DOI 10.17487/RFC7471</span>, <time datetime="2015-03" class="refDate">March 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7471">https://www.rfc-editor.org/rfc/rfc7471</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC7665">[RFC7665]</dt>
       <dd>
 <span class="refAuthor">Halpern, J., Ed.</span> and <span class="refAuthor">C. Pignataro, Ed.</span>, <span class="refTitle">"Service Function Chaining (SFC) Architecture"</span>, <span class="seriesInfo">RFC 7665</span>, <span class="seriesInfo">DOI 10.17487/RFC7665</span>, <time datetime="2015-10" class="refDate">October 2015</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7665">https://www.rfc-editor.org/rfc/rfc7665</a>&gt;</span>. </dd>
@@ -1962,6 +1966,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt id="RFC8200">[RFC8200]</dt>
       <dd>
 <span class="refAuthor">Deering, S.</span> and <span class="refAuthor">R. Hinden</span>, <span class="refTitle">"Internet Protocol, Version 6 (IPv6) Specification"</span>, <span class="seriesInfo">STD 86</span>, <span class="seriesInfo">RFC 8200</span>, <span class="seriesInfo">DOI 10.17487/RFC8200</span>, <time datetime="2017-07" class="refDate">July 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8200">https://www.rfc-editor.org/rfc/rfc8200</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8570">[RFC8570]</dt>
+      <dd>
+<span class="refAuthor">Ginsberg, L., Ed.</span>, <span class="refAuthor">Previdi, S., Ed.</span>, <span class="refAuthor">Giacalone, S.</span>, <span class="refAuthor">Ward, D.</span>, <span class="refAuthor">Drake, J.</span>, and <span class="refAuthor">Q. Wu</span>, <span class="refTitle">"IS-IS Traffic Engineering (TE) Metric Extensions"</span>, <span class="seriesInfo">RFC 8570</span>, <span class="seriesInfo">DOI 10.17487/RFC8570</span>, <time datetime="2019-03" class="refDate">March 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8570">https://www.rfc-editor.org/rfc/rfc8570</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8571">[RFC8571]</dt>
       <dd>

@@ -432,7 +432,8 @@ Table of Contents
    by other components, such as CATS-Forwarders or CATS Path Selectors
    (C-PS) (Section 3.4.4).
 
-   C-NMA is likely to leverage existing techniques (e.g., [RFC8571]).
+   C-NMA is likely to leverage existing techniques (e.g., [RFC7471],
+   [RFC8570], and [RFC8571]).
 
    Figure 2 shows a single, standalone C-NMA within the underlay
    network.  There may be one or more C-NMAs for an underlay network.
@@ -906,9 +907,9 @@ Table of Contents
    client.
 
    Since the service will, in some cases, need to know about
-   applications, clients, and even user identity, it is likely that the
-   C-PS computed path information will need to be encrypted if the
-   client/service communication is not already encrypted.
+   applications, clients, and even user identity, the C-PS computed path
+   information should be encrypted if the client/service communication
+   is not already encrypted.
 
    For more discussion about privacy, refer to [RFC6462] and [RFC6973].
 
@@ -976,6 +977,11 @@ Table of Contents
               DOI 10.17487/RFC6973, July 2013,
               <https://www.rfc-editor.org/rfc/rfc6973>.
 
+   [RFC7471]  Giacalone, S., Ward, D., Drake, J., Atlas, A., and S.
+              Previdi, "OSPF Traffic Engineering (TE) Metric
+              Extensions", RFC 7471, DOI 10.17487/RFC7471, March 2015,
+              <https://www.rfc-editor.org/rfc/rfc7471>.
+
    [RFC7665]  Halpern, J., Ed. and C. Pignataro, Ed., "Service Function
               Chaining (SFC) Architecture", RFC 7665,
               DOI 10.17487/RFC7665, October 2015,
@@ -990,6 +996,11 @@ Table of Contents
               (IPv6) Specification", STD 86, RFC 8200,
               DOI 10.17487/RFC8200, July 2017,
               <https://www.rfc-editor.org/rfc/rfc8200>.
+
+   [RFC8570]  Ginsberg, L., Ed., Previdi, S., Ed., Giacalone, S., Ward,
+              D., Drake, J., and Q. Wu, "IS-IS Traffic Engineering (TE)
+              Metric Extensions", RFC 8570, DOI 10.17487/RFC8570, March
+              2019, <https://www.rfc-editor.org/rfc/rfc8570>.
 
    [RFC8571]  Ginsberg, L., Ed., Previdi, S., Wu, Q., Tantsura, J., and
               C. Filsfils, "BGP - Link State (BGP-LS) Advertisement of
