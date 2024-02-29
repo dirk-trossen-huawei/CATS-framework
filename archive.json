@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-27T00:57:05.658267+00:00",
+  "timestamp": "2024-02-29T00:57:13.228402+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -915,6 +915,24 @@
       "body": "We do currently say that:\r\n\r\n> CATS Service ID (CS-ID):\r\n> An identifier representing a service, which the clients use to access it. See [Section 3.2](https://boucadair.github.io/CATS-framework/draft-ldbc-cats-framework.html#cats-ids).\r\n\r\nHowever, the identifiers that are used by clients is not always available in clear. There are some hidden assumptions that we need to dive into as this will have implication on the CATS Classification",
       "createdAt": "2024-02-07T10:08:57Z",
       "updatedAt": "2024-02-07T10:08:58Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 65,
+      "id": "I_kwDOJBcdGs6AsH3N",
+      "title": "Clarify objective function",
+      "url": "https://github.com/boucadair/CATS-framework/issues/65",
+      "state": "OPEN",
+      "author": "boucadair",
+      "authorAssociation": "OWNER",
+      "assignees": [
+        "boucadair"
+      ],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-28T14:05:15Z",
+      "updatedAt": "2024-02-28T14:05:19Z",
       "closedAt": null,
       "comments": []
     }
@@ -3079,7 +3097,7 @@
       "labels": [],
       "body": "",
       "createdAt": "2024-02-26T10:36:16Z",
-      "updatedAt": "2024-02-26T15:50:15Z",
+      "updatedAt": "2024-02-28T16:35:09Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "eaabc3bdfadfbf9ad2784b31c1fc7e09a7ea11fc",
@@ -3090,8 +3108,30 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "How can you react so quickly?  I am crazy busy recently. Thank you Med! LOL",
+          "createdAt": "2024-02-28T16:34:52Z",
+          "updatedAt": "2024-02-28T16:35:09Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs5xpn_W",
+          "commit": {
+            "abbreviatedOid": "4929571"
+          },
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-28T16:34:14Z",
+          "updatedAt": "2024-02-28T16:34:14Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
