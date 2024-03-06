@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 22 August 2024                                     China Mobile
+Expires: 7 September 2024                                   China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                        19 February 2024
+                                                            6 March 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 August 2024.
+   This Internet-Draft will expire on 7 September 2024.
 
 Copyright Notice
 
@@ -416,10 +416,10 @@ Table of Contents
 
    The CATS Service Metric Agent (C-SMA) is a functional component that
    gathers information about service sites and server resources, as well
-   as the status of the different service instances.  The C-SMAs are
-   located adjacent to the service contact instances and may be hosted
-   by the Egress CATS-Forwarders (Section 3.4.6) or located next to
-   them.
+   as the status of the different service instances.  The C-SMAs may be
+   located adjacent to the service contact instances, co-located with
+   service contact instances, hosted by the Egress CATS-Forwarders
+   (Section 3.4.6), etc.
 
    Figure 2 shows one C-SMA embedded in "CATS-Forwarder 3", and another
    C-SMA that is adjacent to "CATS-Forwarder 1".
@@ -432,7 +432,8 @@ Table of Contents
    by other components, such as CATS-Forwarders or CATS Path Selectors
    (C-PS) (Section 3.4.4).
 
-   C-NMA is likely to leverage existing techniques (e.g., [RFC8571]).
+   C-NMA is likely to leverage existing techniques (e.g., [RFC7471],
+   [RFC8570], and [RFC8571]).
 
    Figure 2 shows a single, standalone C-NMA within the underlay
    network.  There may be one or more C-NMAs for an underlay network.
@@ -492,7 +493,7 @@ Table of Contents
    requirements, per-service contact instance computing-related metrics
    or aggregated per-site computing related metrics (and a combination
    thereof) can be used by a C-PS.  Using aggregated per-site computing
-   related metrics appears as a privileged option scalability-wise, but
+   related metrics appears as a preferred option scalability-wise, but
    relies on Egress CATS-Forwarders that connect to various service
    contact instances to select the proper service contact instance.  An
    Egress CATS-Forwarder may choose to aggregate the metrics from
@@ -501,7 +502,7 @@ Table of Contents
 
 3.4.7.  Underlay Infrastructure
 
-   The "underlay infrastructure" in Figure 2 indicates an IP/MPLS
+   The "underlay infrastructure" in Figure 2 indicates an IP and/or MPLS
    network that is not necessarily CATS-aware.  The CATS paths that are
    computed by a P-CS will be distributed among the CATS-Forwarders
    (Section 3.4.6), and will not affect the underlay nodes.  Underlay
@@ -804,12 +805,11 @@ Table of Contents
    or logically centralized (in a centralized model or hybrid model).
 
    This document does not specify any algorithm for path computation and
-   selection purposes to be supported by C-PSes.  These algorithms are
-   out of the scope of this document.  However, it is expected that a
-   service request or local policy may feed the C-PS computation logic
-   with Objective Functions that provide some information about the path
-   characteristics (e.g., in terms of maximum latency) and the selected
-   service contact instance.
+   selection purposes to be supported by C-PSes.  However, it is
+   expected that a service request or local policy may feed the C-PS
+   computation logic with Objective Functions that provide some
+   information about the path characteristics (e.g., in terms of maximum
+   latency) and the selected service contact instance.
 
    In the example shown in Figure 3, the client sends a service access
    via the network through the "CATS-Forwarder 1", which is an Ingress
@@ -907,9 +907,9 @@ Table of Contents
    client.
 
    Since the service will, in some cases, need to know about
-   applications, clients, and even user identity, it is likely that the
-   C-PS computed path information will need to be encrypted if the
-   client/service communication is not already encrypted.
+   applications, clients, and even user identity, the C-PS computed path
+   information should be encrypted if the client/service communication
+   is not already encrypted.
 
    For more discussion about privacy, refer to [RFC6462] and [RFC6973].
 
@@ -977,6 +977,11 @@ Table of Contents
               DOI 10.17487/RFC6973, July 2013,
               <https://www.rfc-editor.org/rfc/rfc6973>.
 
+   [RFC7471]  Giacalone, S., Ward, D., Drake, J., Atlas, A., and S.
+              Previdi, "OSPF Traffic Engineering (TE) Metric
+              Extensions", RFC 7471, DOI 10.17487/RFC7471, March 2015,
+              <https://www.rfc-editor.org/rfc/rfc7471>.
+
    [RFC7665]  Halpern, J., Ed. and C. Pignataro, Ed., "Service Function
               Chaining (SFC) Architecture", RFC 7665,
               DOI 10.17487/RFC7665, October 2015,
@@ -991,6 +996,11 @@ Table of Contents
               (IPv6) Specification", STD 86, RFC 8200,
               DOI 10.17487/RFC8200, July 2017,
               <https://www.rfc-editor.org/rfc/rfc8200>.
+
+   [RFC8570]  Ginsberg, L., Ed., Previdi, S., Ed., Giacalone, S., Ward,
+              D., Drake, J., and Q. Wu, "IS-IS Traffic Engineering (TE)
+              Metric Extensions", RFC 8570, DOI 10.17487/RFC8570, March
+              2019, <https://www.rfc-editor.org/rfc/rfc8570>.
 
    [RFC8571]  Ginsberg, L., Ed., Previdi, S., Wu, Q., Tantsura, J., and
               C. Filsfils, "BGP - Link State (BGP-LS) Advertisement of
