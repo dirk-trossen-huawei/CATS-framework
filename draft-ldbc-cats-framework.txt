@@ -646,8 +646,8 @@ Table of Contents
    1, CIS-ID 1) and (CS-ID 1, CIS-ID 2)).  Note that this information
    may be aggregated into a single advertisement, but in this case, the
    metrics for each service contact instance are indicated separately.
-   Similarly, the C-SMA agent located at "Service Site 2" advertises the
-   service metrics for the two services hosted by "Service Site 2".
+   Similarly, the C-SMA agent located at "Service Site 3" advertises the
+   service metrics for the two services hosted by "Service Site 3".
 
    The service metric advertisements are processed by the C-PS hosted by
    "CATS-Forwarder 1".  The C-PS also processes network metric
