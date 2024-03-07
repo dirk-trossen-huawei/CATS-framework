@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-05T00:57:29.539747+00:00",
+  "timestamp": "2024-03-07T00:48:23.718984+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -933,6 +933,22 @@
       "body": "",
       "createdAt": "2024-02-28T14:05:15Z",
       "updatedAt": "2024-02-28T14:05:19Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 67,
+      "id": "I_kwDOJBcdGs6BVStX",
+      "title": "Editorial review of Figures 3 to 5",
+      "url": "https://github.com/boucadair/CATS-framework/issues/67",
+      "state": "OPEN",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Not clear to me some parts fo the figures. Assuming Figure 3 is ok, then it is not clear to me the line at the bottom from CS-ID 2 up to CATS forwarder 1. Also whyService CS-ID 2 has no metrics at the bottom part in Figure 5. More clarification text can be benefitial. ",
+      "createdAt": "2024-03-05T18:04:45Z",
+      "updatedAt": "2024-03-05T18:04:45Z",
       "closedAt": null,
       "comments": []
     }
@@ -3090,24 +3106,26 @@
       "id": "PR_kwDOJBcdGs5n5Y_i",
       "title": "comments from Joel Halpern",
       "url": "https://github.com/boucadair/CATS-framework/pull/64",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-02-26T10:36:16Z",
-      "updatedAt": "2024-02-28T16:35:09Z",
+      "updatedAt": "2024-03-06T07:07:05Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "eaabc3bdfadfbf9ad2784b31c1fc7e09a7ea11fc",
       "headRepository": "boucadair/CATS-framework",
       "headRefName": "Joel-comments",
       "headRefOid": "4929571aec02dbb45422a06f07c109a190bc1a34",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-06T07:07:04Z",
+      "mergedAt": "2024-03-06T07:07:04Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "dd3bd3d2d842743571bac400853f5ef8cbe958c3"
+      },
       "comments": [
         {
           "author": "muzixing",
@@ -3132,6 +3150,34 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 66,
+      "id": "PR_kwDOJBcdGs5ov8Bj",
+      "title": "Update draft-ldbc-cats-framework.md",
+      "url": "https://github.com/boucadair/CATS-framework/pull/66",
+      "state": "MERGED",
+      "author": "luismcontreras",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Correction of typo in relation to the description of Figure 3. I think the reference for the C-SMA agent should be Service Site 3 instead of Service Site 2.",
+      "createdAt": "2024-03-05T17:47:30Z",
+      "updatedAt": "2024-03-06T07:08:57Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "eaabc3bdfadfbf9ad2784b31c1fc7e09a7ea11fc",
+      "headRepository": "boucadair/CATS-framework",
+      "headRefName": "luismcontreras-patch-1",
+      "headRefOid": "519ff6bfdcdd4fffb30564e49a74a503411be5a1",
+      "closedAt": "2024-03-06T07:08:56Z",
+      "mergedAt": "2024-03-06T07:08:56Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "e8ff0eb58dbfa52d1848d0338ce296d276bb2a34"
+      },
+      "comments": [],
+      "reviews": []
     }
   ]
 }
