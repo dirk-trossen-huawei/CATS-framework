@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-17T01:01:46.227309+00:00",
+  "timestamp": "2024-03-19T00:57:53.306485+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -3184,24 +3184,26 @@
       "id": "PR_kwDOJBcdGs5paHsd",
       "title": "Comments from CFA",
       "url": "https://github.com/boucadair/CATS-framework/pull/68",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "boucadair",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-03-12T16:47:13Z",
-      "updatedAt": "2024-03-12T16:47:13Z",
+      "updatedAt": "2024-03-18T01:09:00Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "62de18e5709391c0339441dad51c25a2b706a302",
       "headRepository": "boucadair/CATS-framework",
       "headRefName": "CFA",
       "headRefOid": "53af767e69436eb66a6d097c03005aa2c30b4514",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-18T01:09:00Z",
+      "mergedAt": "2024-03-18T01:09:00Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "b480160cac8e29e9a27d13b5574165b30ed9f3c6"
+      },
       "comments": [],
       "reviews": []
     }
