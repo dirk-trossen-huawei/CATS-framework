@@ -5,14 +5,14 @@
 cats                                                          C. Li, Ed.
 Internet-Draft                                       Huawei Technologies
 Intended status: Informational                                     Z. Du
-Expires: 19 September 2024                                  China Mobile
+Expires: 26 October 2024                                    China Mobile
                                                        M. Boucadair, Ed.
                                                                   Orange
                                                          L. M. Contreras
                                                               Telefonica
                                                                 J. Drake
                                                   Juniper Networks, Inc.
-                                                           18 March 2024
+                                                           24 April 2024
 
 
         A Framework for Computing-Aware Traffic Steering (CATS)
@@ -40,7 +40,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 19 September 2024.
+   This Internet-Draft will expire on 26 October 2024.
 
 Copyright Notice
 
@@ -164,8 +164,7 @@ Table of Contents
       logic which is internal to the provider.  For example, these
       resources may be:
 
-      *  Exposed by one or multiple processes (a.k.a.  Service Functions
-         (SFs) [RFC7665]).
+      *  Exposed by one or multiple processes.
 
       *  Provided by virtual instances, physical, or a combination
          thereof.
@@ -981,11 +980,6 @@ Table of Contents
               Previdi, "OSPF Traffic Engineering (TE) Metric
               Extensions", RFC 7471, DOI 10.17487/RFC7471, March 2015,
               <https://www.rfc-editor.org/rfc/rfc7471>.
-
-   [RFC7665]  Halpern, J., Ed. and C. Pignataro, Ed., "Service Function
-              Chaining (SFC) Architecture", RFC 7665,
-              DOI 10.17487/RFC7665, October 2015,
-              <https://www.rfc-editor.org/rfc/rfc7665>.
 
    [RFC7826]  Schulzrinne, H., Rao, A., Lanphier, R., Westerlund, M.,
               and M. Stiemerling, Ed., "Real-Time Streaming Protocol
