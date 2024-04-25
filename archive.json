@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-23T01:00:48.616759+00:00",
+  "timestamp": "2024-04-25T01:02:38.125777+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -957,6 +957,44 @@
           "body": "Hi Luis\uff0cthe bottom line from CS-ID2 up to CATS forwarder 1 is an example of CS-ID route distribution with/without metrics. In Figure 3, it is an distributed model, so the metrics will be attached to the CS-ID routes and distributed to the ingress CATS forwarder.  \r\n\r\nIn Figure 5, it is an hybrid model, so we illustrate that the metric can be collected by a central element and sync up with the Ingress CATS forwarder, so in this case, the CS-ID 2 has no (computing metrics). \r\n\r\nis it clear for you? you can propose some text :) ",
           "createdAt": "2024-04-16T15:20:24Z",
           "updatedAt": "2024-04-16T15:20:24Z"
+        }
+      ]
+    },
+    {
+      "number": 69,
+      "id": "I_kwDOJBcdGs6Gk6lu",
+      "title": "A clarification problem about definition of Service contact instance",
+      "url": "https://github.com/boucadair/CATS-framework/issues/69",
+      "state": "OPEN",
+      "author": "dzpzp",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": " \r\nCurrently, in the draft, it is\u00a0described\u00a0\u00a0that:\r\n\r\n\r\nService contact instance:\r\nA client-facing service function instance that is responsible for receiving requests in the context of a given service. A service request is processed according to the service logic (e.g., handle locally or solicit backend resources). Steering beyond the service contact instance is hidden to both clients and CATS components.[\u00b6](https://github.com/boucadair/CATS-framework/issues/new#section-2-2.32.1)\r\na service contact instance is reachable via at least one Egress CATS Forwarder.\r\nA service can be accessed via multiple service contact instances running at the same or different locations (service sites).\r\nThe same service contact instance may dispatch service requests to one or more service instances (e.g., ***an instance*** that behaves as a service load-balancer).\r\n\r\n\u00a0 \u00a0 I wonder what the\u00a0***an instance*** means here. Is it a\u00a0Service contact instance, or a\u00a0\u00a0service instance ?\r\n\r\nIMO, it is a\u00a0Service contact instance.\u00a0Thus, it can be changed to:\r\n\r\nThe same service contact instance may dispatch service requests to one or more service instances (e.g., ***a service contact instance*** that behaves as a service load-balancer).\r\n. \r\n\r\nIf\u00a0I\u00a0misunderstand it,\u00a0please\u00a0correct\u00a0me,\u00a0thanks.\r\n\r\nI also posted an email about the problem, and I hope to obtain some feedback here.",
+      "createdAt": "2024-04-23T02:41:29Z",
+      "updatedAt": "2024-04-24T14:34:43Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Interesting comment. Thanks for that! The update looks reasonable to me. How about let me make it more clear like below:\r\n\r\nThe same service contact instance may dispatch service requests to one or more service instances. When a service contact instance dispatch the service requiest to multiple service instances, it behaves as a service load-balancer.",
+          "createdAt": "2024-04-24T12:41:31Z",
+          "updatedAt": "2024-04-24T12:41:31Z"
+        },
+        {
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "body": "I like more the update from dz\r\n\r\n> (e.g., _**a service contact instance**_ that behaves as a service load-balancer).\r\n> .\r\n\r\nLooks good to me. I prefer this over the @muzixing's proposal. Thanks.",
+          "createdAt": "2024-04-24T14:29:13Z",
+          "updatedAt": "2024-04-24T14:29:13Z"
+        },
+        {
+          "author": "muzixing",
+          "authorAssociation": "COLLABORATOR",
+          "body": "No Problem to me, we can use Zongpeng's proposal",
+          "createdAt": "2024-04-24T14:34:42Z",
+          "updatedAt": "2024-04-24T14:34:42Z"
         }
       ]
     }
@@ -3214,6 +3252,48 @@
       },
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 70,
+      "id": "PR_kwDOJBcdGs5tmQzr",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/boucadair/CATS-framework/pull/70",
+      "state": "MERGED",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "delete SFC related text to avoid potential discussion of the Service definition.",
+      "createdAt": "2024-04-24T12:38:20Z",
+      "updatedAt": "2024-04-24T14:23:32Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "b480160cac8e29e9a27d13b5574165b30ed9f3c6",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "2384519602f99418c0f76d393c8cc4988ab889fb",
+      "closedAt": "2024-04-24T14:23:32Z",
+      "mergedAt": "2024-04-24T14:23:32Z",
+      "mergedBy": "boucadair",
+      "mergeCommit": {
+        "oid": "fb74a8b5deed40f6b1cd47b9c78e3fffb6722b2f"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJBcdGs54Zz-M",
+          "commit": {
+            "abbreviatedOid": "2384519"
+          },
+          "author": "boucadair",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-04-24T14:23:24Z",
+          "updatedAt": "2024-04-24T14:23:24Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
