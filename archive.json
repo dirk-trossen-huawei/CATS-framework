@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-25T01:02:38.125777+00:00",
+  "timestamp": "2024-04-28T01:04:59.166198+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -965,15 +965,15 @@
       "id": "I_kwDOJBcdGs6Gk6lu",
       "title": "A clarification problem about definition of Service contact instance",
       "url": "https://github.com/boucadair/CATS-framework/issues/69",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "dzpzp",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": " \r\nCurrently, in the draft, it is\u00a0described\u00a0\u00a0that:\r\n\r\n\r\nService contact instance:\r\nA client-facing service function instance that is responsible for receiving requests in the context of a given service. A service request is processed according to the service logic (e.g., handle locally or solicit backend resources). Steering beyond the service contact instance is hidden to both clients and CATS components.[\u00b6](https://github.com/boucadair/CATS-framework/issues/new#section-2-2.32.1)\r\na service contact instance is reachable via at least one Egress CATS Forwarder.\r\nA service can be accessed via multiple service contact instances running at the same or different locations (service sites).\r\nThe same service contact instance may dispatch service requests to one or more service instances (e.g., ***an instance*** that behaves as a service load-balancer).\r\n\r\n\u00a0 \u00a0 I wonder what the\u00a0***an instance*** means here. Is it a\u00a0Service contact instance, or a\u00a0\u00a0service instance ?\r\n\r\nIMO, it is a\u00a0Service contact instance.\u00a0Thus, it can be changed to:\r\n\r\nThe same service contact instance may dispatch service requests to one or more service instances (e.g., ***a service contact instance*** that behaves as a service load-balancer).\r\n. \r\n\r\nIf\u00a0I\u00a0misunderstand it,\u00a0please\u00a0correct\u00a0me,\u00a0thanks.\r\n\r\nI also posted an email about the problem, and I hope to obtain some feedback here.",
       "createdAt": "2024-04-23T02:41:29Z",
-      "updatedAt": "2024-04-24T14:34:43Z",
-      "closedAt": null,
+      "updatedAt": "2024-04-25T08:56:52Z",
+      "closedAt": "2024-04-25T08:56:52Z",
       "comments": [
         {
           "author": "muzixing",
@@ -3294,6 +3294,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 71,
+      "id": "PR_kwDOJBcdGs5tsnCY",
+      "title": "Update draft-ietf-cats-framework.md",
+      "url": "https://github.com/boucadair/CATS-framework/pull/71",
+      "state": "OPEN",
+      "author": "muzixing",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "addressed Zongpeng's comment regarding Service contact instance",
+      "createdAt": "2024-04-25T08:56:19Z",
+      "updatedAt": "2024-04-25T08:56:19Z",
+      "baseRepository": "boucadair/CATS-framework",
+      "baseRefName": "main",
+      "baseRefOid": "fb74a8b5deed40f6b1cd47b9c78e3fffb6722b2f",
+      "headRepository": "muzixing/CATS-Framework",
+      "headRefName": "main",
+      "headRefOid": "e2146596e320e8d07ca8e9437ba959dfb649974b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
