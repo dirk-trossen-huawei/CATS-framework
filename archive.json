@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-04-30T01:00:18.939050+00:00",
+  "timestamp": "2024-05-02T01:00:14.306448+00:00",
   "repo": "boucadair/CATS-framework",
   "labels": [
     {
@@ -3300,24 +3300,26 @@
       "id": "PR_kwDOJBcdGs5tsnCY",
       "title": "Update draft-ietf-cats-framework.md",
       "url": "https://github.com/boucadair/CATS-framework/pull/71",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "muzixing",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "addressed Zongpeng's comment regarding Service contact instance",
       "createdAt": "2024-04-25T08:56:19Z",
-      "updatedAt": "2024-04-25T08:56:19Z",
+      "updatedAt": "2024-04-30T09:10:53Z",
       "baseRepository": "boucadair/CATS-framework",
       "baseRefName": "main",
       "baseRefOid": "fb74a8b5deed40f6b1cd47b9c78e3fffb6722b2f",
       "headRepository": "muzixing/CATS-Framework",
       "headRefName": "main",
       "headRefOid": "e2146596e320e8d07ca8e9437ba959dfb649974b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-04-30T09:10:53Z",
+      "mergedAt": "2024-04-30T09:10:53Z",
+      "mergedBy": "muzixing",
+      "mergeCommit": {
+        "oid": "f2c7bc0e1c79d091201583c96f43465799d68ad4"
+      },
       "comments": [],
       "reviews": []
     }
